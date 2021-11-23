@@ -1,0 +1,15 @@
+{{ bienvenue }} <br><br>
+
+{# Affichage d'une variable qui correspond à un titre #}
+{# Variable qui sera définie dans le controleur : BonjourControlleur #}
+{# Ce titre sera affiché en majuscules #}
+<div>{{ titre | upper }}</div>
+{# Ajout d'une itération POUR = répétition #}
+{# Demande de répéter sur la variable array (tableau), qui contiendra donc plusieurs éléments (item) #}
+{# La variable array sera définie puis transmise par le controleur : BonjourController #}
+{# Chaque élément du tableau sera donc affiché entre 2 balises LI #}
+<ul>
+    {% for item in array %}
+        <li>{{item}}</li>
+    {% endfor %}
+</ul>
