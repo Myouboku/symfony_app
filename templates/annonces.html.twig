@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Liste des annonces{% endblock %}</title>
+    </head>
+    <body>
+        {% block body %}
+        {{ <pre>
+            {{ dump(listeAnnonces()) }}
+        </pre>}}
+            <h1>Liste des annonces</h1><br>
+            {% for i in range(low = 0, high = 5, step = 1) %}
+                {{ i }} {{ texteBoucle }} <br>
+            {% endfor %}
+        {% endblock %}
+    </body>
+</html>
