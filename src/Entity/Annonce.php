@@ -2,37 +2,73 @@
 
 namespace App\Entity;
 
-class Annonce{
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass=AnnonceRepository::class)
+ */
+class Annonce
+{
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=225)
+     */
     private $titre;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
     private $auteur;
+
+    /**
+     * @ORM\Column(type="text")
+     */
     private $contenu;
 
-    function getId(){
+    public function getId(): ?int
+    {
         return $this->id;
     }
-    function setId($id){
-        $this->id = $id;
-    }
 
-    function getTitre(){
+    public function getTitre(): ?string
+    {
         return $this->titre;
     }
-    function setTitre($titre){
-        $this->titre=$titre;
+
+    public function setTitre(string $titre): self
+    {
+        $this->titre = $titre;
+
+        return $this;
     }
 
-    function getAuteur(){
+    public function getAuteur(): ?string
+    {
         return $this->auteur;
     }
-    function setAuteur($auteur){
+
+    public function setAuteur(string $auteur): self
+    {
         $this->auteur = $auteur;
+
+        return $this;
     }
 
-    function getContenu(){
+    public function getContenu(): ?string
+    {
         return $this->contenu;
     }
-    function setContenu($contenu){
+
+    public function setContenu(string $contenu): self
+    {
         $this->contenu = $contenu;
+
+        return $this;
     }
 }
